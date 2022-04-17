@@ -1,0 +1,31 @@
+<html>
+    
+    <body>
+        
+        <h2>Form Buku Tamu</h2>
+        <form  method="get">
+        <label for="Nama">Nama : </label>  <input type="text" name="nama"> <br>
+       <label for="telepon">No.Telephone : </label><input type="number" name="phone" id="phone"><br>
+       <label for="pesan">pesan</label> <br>
+       <textarea name="text" id="text" cols="30" rows="10"></textarea><br>
+       <input type="submit" name="kirim" id="kirim">
+       <script>
+           let kirim=document.getElementById('kirim');
+           kirim.addEventListener('click',function(){
+               let phone = document.getElementById('phone').value;
+               let text = document.getElementById('text').value;
+               let win = window.open('https://api.whatsapp.com/send?phone='+phone+'&text='+text);
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus();
+            } else {
+                alert('tolong aktifkan ');
+                 }
+            });
+           
+       </script>
+
+    
+    
+    </body>
+</html>
